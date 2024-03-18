@@ -50,7 +50,7 @@ function App() {
     setSortedTickets(sortedTickets);
   };
 
-  const getColumns = useCallback(() => {
+  const getColumns = () => {
     const columns = [];
     console.log('getColumns', groupBy);
     const groupedTickets = sortedTickets.reduce((grouped, ticket) => {
@@ -65,7 +65,8 @@ function App() {
       columns.push({ title: key, tickets: groupedTickets[key] });
     }
     console.log('columns', columns);
-    return columns;  }, [sortedTickets, groupBy]);
+    return columns;  
+  };
 
   const handleSortByChange = (event) => {
     setSortBy(event.target.value);

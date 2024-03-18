@@ -15,8 +15,12 @@ const Column = ({ column, groupBy }) => {
     switch (groupBy) {
       case GROUP_BY_OPTIONS.userId:
         const user = users.find((user) => user.id === column.title);
-        console.log (users,column.title);
-        setTitle(user.name);
+        console.log (users, column.title);
+        if (user) {
+          setTitle(user.name);
+        } else {
+          console.error(`No user found with id ${column.title}`);
+        }
         break;
       case GROUP_BY_OPTIONS.priority:
         setTitle(PRIORITY_LEVELS[column.title]);
@@ -29,7 +33,8 @@ const Column = ({ column, groupBy }) => {
       default:
         setTitle(column.title);
       }
-    }, [groupBy]);
+    },
+  [column.title, groupBy, users]);
 
   if (!column) {
     return null;
