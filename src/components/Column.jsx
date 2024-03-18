@@ -15,7 +15,6 @@ const Column = ({ column, groupBy }) => {
     switch (groupBy) {
       case GROUP_BY_OPTIONS.userId:
         const user = users.find((user) => user.id === column.title);
-        console.log (users, column.title);
         if (user) {
           setTitle(user.name);
         } else {
@@ -24,10 +23,8 @@ const Column = ({ column, groupBy }) => {
         break;
       case GROUP_BY_OPTIONS.priority:
         setTitle(PRIORITY_LEVELS[column.title]);
-        console.log(column.title, PRIORITY_LEVELS[column.title]);
         break;
       case GROUP_BY_OPTIONS.status:
-        console.log(column.title, groupBy);
         setTitle(column.title);
         break;
       default:

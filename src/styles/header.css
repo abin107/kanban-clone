@@ -1,0 +1,30 @@
+.display-button {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1 1px;
+  height: auto;
+  border-radius: 10px;
+  background-color: #fff;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.1);
+}
+
+.display-options {
+  display: flex;
+  border: 1px solid #282c34;
+  width : fit-content;
+  font-size: large;
+  flex-direction: column;
+  margin-top: 10px;
+  border-radius: 5px;
+  height: auto;
+  border-radius: 10px;
+  background-color: #fff;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.1);
+}
+
+.display-options-item {
+  padding: 10px;
+  border-bottom: 1px solid #282c34;
+  cursor: pointer;
+}
